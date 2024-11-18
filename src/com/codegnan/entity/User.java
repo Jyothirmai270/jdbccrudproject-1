@@ -1,0 +1,62 @@
+package com.codegnan.entity;
+
+import java.util.List;
+
+public class User {
+    private int id;
+    private String name;
+    private String email;
+ 
+    // Constructors
+    public User() {
+    }
+ 
+    public User(int id, String name, String email) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+    }
+ 
+    // Getters and Setters
+    public int getId() {
+        return id;
+    }
+ 
+    public void setId(int id) {
+        this.id = id;
+    }
+ 
+    public String getName() {
+        return name;
+    }
+ 
+    public void setName(String name) {
+        this.name = name;
+    }
+ 
+    public String getEmail() {
+        return email;
+    }
+ 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+ 
+    // toString() method
+    @Override
+    public String toString() {
+        return "User{" +
+            	"id=" + id +
+            	", name='" + name + '\'' +
+            	", email='" + email + '\'' +
+            	'}';
+    }
+    public interface UserDAO {
+    	void addUser(User user);
+    	User getUserById(int id);
+    	List<User> getAllUsers();
+    	void updateUser(User user);
+    	void deleteUser(int id);
+    }
+
+}
